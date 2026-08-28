@@ -81,3 +81,28 @@ function sumArray(nums){
 }
 
 console.log(sumArray([10, 20, 30, 40]));
+
+
+
+// 5. Count Vowels
+
+/**
+ * @param {string} str
+ * @return {number}
+ */
+function countVowels(str){
+    const vowels = "aeiou";
+    let count = 0;
+    
+    let lowerStr = str.toLowerCase();
+    
+    for (let i = 0; i < lowerStr.length; i++) {
+        if (vowels.includes(lowerStr[i])) {
+            count++;
+        }
+    }
+    
+    return count;
+}
+
+console.log(countVowels("javascript")); 
