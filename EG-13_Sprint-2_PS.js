@@ -38,3 +38,25 @@ function findMax(nums){
 }
 
 console.log(findMax([3, 7, 2, 9, 5])); 
+
+
+
+
+// 3. Check for Palindrome
+
+/**
+ * @param {string} str
+ * @return {boolean}
+ */
+function isPalindrome(str){
+    let reversedStr = "";
+    
+    
+    for (let i = str.length - 1; i >= 0; i--) {
+        reversedStr += str[i];
+    }
+    
+    return str === reversedStr;
+}
+
+console.log(isPalindrome("racecar")); 
