@@ -15,3 +15,26 @@ function reverseString(str){
 }
 
 console.log(reverseString("hello"));
+
+
+
+
+// 2. Find Maximum
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+function findMax(nums){
+    let max = nums[0];
+    
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] > max) {
+            max = nums[i]; 
+        }
+    }
+    
+    return max;
+}
+
+console.log(findMax([3, 7, 2, 9, 5])); 
