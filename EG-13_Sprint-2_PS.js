@@ -128,3 +128,31 @@ function twoSum(nums, target){
 }
 
 console.log(twoSum([2, 7, 11, 15], 9)); 
+
+
+
+// 7. Flatten a Nested Array
+
+/**
+ * @param {Array} arr
+ * @return {Array}
+ */
+function flattenArray(arr){
+    let result = [];
+    
+    for (let i = 0; i < arr.length; i++) {
+        
+        if (Array.isArray(arr[i])) {
+            let innerFlattened = flattenArray(arr[i]);
+            for (let j = 0; j < innerFlattened.length; j++) {
+                result.push(innerFlattened[j]);
+            }
+        } else {
+            result.push(arr[i]);
+        }
+    }
+    
+    return result;
+}
+
+console.log(flattenArray([1, [2, [3, 4], 5]])); 
