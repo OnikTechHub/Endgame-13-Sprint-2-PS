@@ -156,3 +156,36 @@ function flattenArray(arr){
 }
 
 console.log(flattenArray([1, [2, [3, 4], 5]])); 
+
+
+
+
+// 8. Group Anagrams
+
+/**
+ * @param {string[]} strs
+ * @return {string[][]}
+ */
+function groupAnagrams(strs){
+    let map = {};
+    
+    for (let i = 0; i < strs.length; i++) {
+        let word = strs[i];
+        let sortedWord = word.split('').sort().join('');
+        
+        if (!map[sortedWord]) {
+            map[sortedWord] = [];
+        }
+        
+        map[sortedWord].push(word);
+    }
+    
+    let result = [];
+    for (let key in map) {
+        result.push(map[key]);
+    }
+    
+    return result;
+}
+
+console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
