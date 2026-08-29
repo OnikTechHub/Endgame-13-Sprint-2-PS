@@ -189,3 +189,35 @@ function groupAnagrams(strs){
 }
 
 console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
+
+
+// 9. Longest Substring Without Repeating Characters
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+function lengthOfLongestSubstring(s){
+    let maxLength = 0;
+    let left = 0;
+    let charSet = new Set();
+    for (let right = 0; right < s.length; right++) {
+        
+        while (charSet.has(s[right])) {
+            charSet.delete(s[left]);
+            left++;
+        }
+        
+        charSet.add(s[right]);
+        
+
+        let currentLength = right - left + 1;
+        if (currentLength > maxLength) {
+            maxLength = currentLength;
+        }
+    }
+    
+    return maxLength;
+}
+
+console.log(lengthOfLongestSubstring("abcabcbb"));
